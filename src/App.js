@@ -11,11 +11,29 @@ export class App extends Component {
     return (
       <div>
         <nav>
-          {/*Aca deben ir los links de navegacion*/}
+          <ul className="nav nav-tabs navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/page1">
+                Page 1
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/page2">
+                Page 2
+              </Link>
+            </li>
+          </ul>
         </nav>
-        {/* Aca tienes que agreager algo para que las rutas funcionen*/}
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/page1" />
+          </Route>
+          <Route path="/page1" component={Page1} />
+          <Route path="/page2" component={Page2} />
+          <Route component={NotFound} />
+        </Switch>
       </div>
-    )
+    );
   }
 }
 

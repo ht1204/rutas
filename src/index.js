@@ -4,7 +4,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from './App';
 import './index.css';
 
+const routes = (
+  <Router>
+    <App />
+  </Router>
+);
+
+
 ReactDOM.render(
-  <App />, // Implementa acá el enrutador.
+  routes, // Implementa acá el enrutador.
   document.getElementById('root')
 );
